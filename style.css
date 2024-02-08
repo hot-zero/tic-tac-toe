@@ -1,0 +1,189 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --cell-size: 100px;
+  --mark-size: calc(var(--cell-size) * 0.9);
+}
+
+body {
+  margin: 0;
+  background-color: #8EC5FC;
+  background-color: hsl(220deg 100% 80%);
+}
+
+header h1 {
+  color: #ffffff;
+  text-align: center; 
+  padding: 20px 0; 
+}
+
+
+#text {
+  color: #ffffff;
+  align-items: center; 
+  width: 100vw;
+  height: 5vh;
+  display: grid;  
+  justify-content: center; 
+  align-content: center; 
+  justify-items: center; 
+}
+
+.box {
+  position: absolute; 
+  top: 40%;
+  left: 50%;
+  width: 350px;
+  height: inherit; 
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: white;
+  box-sizing: border-box; 
+  box-shadow: 0 5px 12px rgba(0,0,0,.6);
+  border-radius: 10px; 
+}
+
+.game-board {
+  display: grid; 
+    grid-template-columns: repeat(3, auto);  
+    justify-content: center; 
+    padding: 20px;
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 1px solid black;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  cursor: pointer; 
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;  
+}
+
+.cell:nth-child(3n + 1) {
+  border-left: none;
+}
+
+.cell:nth-child(3n + 3) {
+  border-right: none;
+}
+
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+  border-bottom: none;
+}
+
+.cell.x,
+.cell.circle {
+  cursor: not-allowed;
+}
+
+/* X symbol styling */
+.cell.x::before,
+.cell.x::after {
+  background-color: #f30202; 
+  content: "";
+  position: absolute;    
+  width: calc(var(--mark-size) * 0.15);
+  height: var(--mark-size);
+}
+
+.cell.x::before {
+  transform: rotate(45deg);
+}
+
+.cell.x::after {
+  transform: rotate(-45deg);
+}
+
+/* Circle symbol styling */
+.cell.circle::before,
+.cell.circle::after {
+  background-color: #043361; 
+  content: "";
+  position: absolute; ;  
+  border-radius: 50%;  
+}
+
+.cell.circle::before {
+  width: var(--mark-size);
+  height: var(--mark-size);
+}
+
+.cell.circle::after {
+  width: calc(var(--mark-size) * 0.7);
+  height: calc(var(--mark-size) * 0.7);
+  background-color: white; 
+}
+
+.winning-message {
+  display: none;              
+  text-align: center;   
+  padding-top: 20px;     
+  color: #f2500b;
+  font-size: 2rem;    
+}
+
+.winning-message button {
+  font-size: 3rem;         
+  background-color: white;
+  border: 1px solid black;
+  padding: 0.25em 0.5em;
+  cursor: pointer;  
+}
+
+.winning-message button:hover {
+  background-color: #884bc9;
+  color: white;
+  border-color: white; 
+}
+
+.winning-message.show {
+  display: block;
+}
+
+.controls {
+  text-align: center;  
+  padding: 20px;
+}
+
+#restButton {
+display: inline-block; 
+outline: none;
+cursor: pointer;     
+font-size: 16px;   
+line-height: 20px;  
+font-weight: 600;  
+border-radius: 8px; 
+padding: 13px 23px;
+border: 1px solid white;
+
+transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s,
+-webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+
+background: #e6e20b;
+color: #000000;
+}
+
+#restButton:hover {
+border-color: #000000; 
+background:  #bcb903;
+}
+
+
+
