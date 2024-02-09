@@ -2,7 +2,7 @@ HOTZERO ASMR Programming
 
 
 My YouTube Channel: 
-"http://youtube.com/channel/UCM115TSKJqBYMFZ35cCDMeQ"
+["http://youtube.com/channel/UCM115TSKJqBYMFZ35cCDMeQ"](https://youtu.be/7DiltFRm_q4?si=8MT4TzJDR8_EnBqF)
 
 
 
